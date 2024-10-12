@@ -26,13 +26,15 @@ public class ModItems {
 
 
     public static final Item TIMBER_AXE = registerItem("timber_axe",
-            new TimberAxeItem(ToolMaterials.IRON, new Item.Settings()
-                    .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.IRON, 1, -2.8f))
+            new TimberAxeItem(ModToolMaterials.TIMBER, new Item.Settings()
+                    .attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.TIMBER, 1, -2.8f))
             ));
+    public static final Item TIMBER_AXE_HEAD = registerItem("timber_axe_head", new Item(new Item.Settings().maxCount(1)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(ITMG.MOD_ID, name), item);
     }
+
 
     public static void registerModItems(){
         ITMG.LOGGER.info("Registering Mod Items for " + ITMG.MOD_ID);

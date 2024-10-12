@@ -48,6 +48,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.BEDROCK), conditionsFromItem(Items.BEDROCK))
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.TIMBER_AXE_HEAD)
+                .pattern("ST")
+                .pattern("T ")
+                .input('S', Items.IRON_BLOCK)
+                .input('T', Items.IRON_INGOT)
+                .criterion(hasItem(Items.BEDROCK), conditionsFromItem(Items.BEDROCK))
+                .offerTo(exporter);
+
+
 
     }
 }

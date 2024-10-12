@@ -1,7 +1,9 @@
-// 1.21.1	2024-10-12T20:10:28.2938272	ITMG/Recipes
+// 1.21.1	2024-10-12T21:13:08.0176337	ITMG/Recipes
 3c851cd3c6813c5afd06a815d779a2a7941444a1 data\itmg\advancement\recipes\misc\heart_state_1.json
 f622e12489c1e9eb5c3714e0262ecb98b3245e10 data\itmg\recipe\snow_sword.json
 a6af0a3b8c32ba0cfe723e56e772824028faccb2 data\itmg\advancement\recipes\misc\heart.json
+d7daaad2ff87d17037dd291e76198db249a7e698 data\itmg\advancement\recipes\combat\timber_axe_head.json
 91b053c33eda8ed41689684f3263417a2f5dd00e data\itmg\recipe\heart_state_1.json
 b3d5f8723217a1e9b829a09d6ec161eebaf3b1c6 data\itmg\recipe\heart.json
 2184e5b4553d6eb044db7ab5e0322e4bd4d65278 data\itmg\advancement\recipes\combat\snow_sword.json
+1c1e819671ee4fa08a488b6414c065d414683e34 data\itmg\recipe\timber_axe_head.json

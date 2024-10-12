@@ -5,6 +5,9 @@ import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -16,7 +19,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class TimberAxeItem extends AxeItem {
@@ -87,6 +92,8 @@ public class TimberAxeItem extends AxeItem {
                 pos.up(), pos.down(), pos.north(), pos.south(), pos.east(), pos.west()
         };
     }
+
+
 
     private boolean isLog(BlockState blockState) {
         return blockState.isOf(Blocks.OAK_LOG) ||

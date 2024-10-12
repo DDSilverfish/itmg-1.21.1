@@ -21,5 +21,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HEART, Models.GENERATED);
         itemModelGenerator.register(ModItems.SNOW_SWORD, Models.GENERATED);
         itemModelGenerator.register(ModItems.TIMBER_AXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TIMBER_AXE_HEAD, Models.GENERATED);
     }
 }
