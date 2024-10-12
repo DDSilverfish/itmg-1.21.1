@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:nether_star"
+    },
+    "@": {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    },
+    "A": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "A@A",
+    "@#@",
+    "A@A"
+  ],
+  "result": {
+    "count": 1,
+    "id": "itmg:heart_state_1"
+  }
+}

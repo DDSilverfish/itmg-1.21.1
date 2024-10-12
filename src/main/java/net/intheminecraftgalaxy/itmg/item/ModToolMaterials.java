@@ -11,7 +11,7 @@ import net.minecraft.registry.tag.TagKey;
 import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
-    SNOW_TOOL(ModTags.Blocks.INCORRECT_FOR_SNOW_TOOL, 10, 1.0F, 0.0f, 15, () -> Ingredient.ofItems(Items.SNOWBALL));
+    SNOW_TOOL(ModTags.Blocks.INCORRECT_FOR_SNOW_TOOL, 10, 1.0F, 0.0f, 22, () -> Ingredient.ofItems(Items.SNOWBALL));
 
     private final TagKey<Block> inverseTag;
     private final int itemDurability;

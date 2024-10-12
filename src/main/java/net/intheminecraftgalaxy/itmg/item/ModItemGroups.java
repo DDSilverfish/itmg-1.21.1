@@ -25,6 +25,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.itmg.unique_items"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.SNOW_SWORD);
+                        entries.add(ModItems.TIMBER_AXE);
                     }).build());
 
     public static void registerItemGroups() {
