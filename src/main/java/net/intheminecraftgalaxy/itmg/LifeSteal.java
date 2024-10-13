@@ -39,19 +39,24 @@ public class LifeSteal {
                     // Send a message to the player when they kill another player
                     killer.sendMessage(Text.literal("You killed " + killedPlayer.getName().getString() + "!"), false);
 
-                    // Remove a heart (decrease max health) from the killed player
+                    // Add a heart (increase max health) to the killer
                     EntityAttributeInstance killedHealthAttribute = killedPlayer.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+                    EntityAttributeInstance killerHealthAttribute = killer.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+
+
+                    if (killerHealthAttribute != null && killedHealthAttribute != null && (killedHealthAttribute.getBaseValue() != InTheMinecraftGalaxyConfig.minHeart)) {
+                        double currentMaxHealthKiller = killerHealthAttribute.getBaseValue();
+                        killerHealthAttribute.setBaseValue(Math.min(currentMaxHealthKiller + InTheMinecraftGalaxyConfig.heartDamage, InTheMinecraftGalaxyConfig.maxHeart));  // Add one heart (2 health points) until max 30
+                    }
+
+
+                    // Remove a heart (decrease max health) from the killed player
+
                     if (killedHealthAttribute != null) {
                         double currentMaxHealthKilled = killedHealthAttribute.getBaseValue();
                         killedHealthAttribute.setBaseValue(Math.max(currentMaxHealthKilled - InTheMinecraftGalaxyConfig.heartDamage, InTheMinecraftGalaxyConfig.minHeart));  // Remove one heart, min is 2
                     }
 
-                    // Add a heart (increase max health) to the killer
-                    EntityAttributeInstance killerHealthAttribute = killer.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
-                    if (killerHealthAttribute != null && killedHealthAttribute != null && killedHealthAttribute.getBaseValue() != 2.0) {
-                        double currentMaxHealthKiller = killerHealthAttribute.getBaseValue();
-                        killerHealthAttribute.setBaseValue(Math.min(currentMaxHealthKiller + InTheMinecraftGalaxyConfig.heartDamage, InTheMinecraftGalaxyConfig.maxHeart));  // Add one heart (2 health points) until max 30
-                    }
 
 
                 }

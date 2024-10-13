@@ -16,6 +16,7 @@ public class ITMG implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
+		InTheMinecraftGalaxyConfig.loadConfig();
 		ModItemGroups.registerItemGroups();
 
 		ModItems.registerModItems();
