@@ -18,6 +18,7 @@ import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -126,5 +127,4 @@ public class TimberAxeItem extends AxeItem {
 
         super.appendTooltip(stack, context, tooltip, type);
     }
-
 }

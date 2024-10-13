@@ -27,6 +27,7 @@ public class ModItemGroups {
                         entries.add(ModItems.CRAFTING_KEY);
                         entries.add(ModItems.SNOW_SWORD);
                         entries.add(ModItems.TIMBER_AXE);
+                        entries.add(ModItems.TIMBER_AXE_HEAD);
                     }).build());
 
     public static void registerItemGroups() {

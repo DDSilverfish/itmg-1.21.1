@@ -1,6 +1,6 @@
 package net.intheminecraftgalaxy.itmg.util;
 
-import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.intheminecraftgalaxy.itmg.item.ModItems;
 import net.minecraft.block.Blocks;
 import net.minecraft.loot.LootPool;
@@ -32,7 +32,8 @@ public class ModLootTableModifiers {
             }
         });*/
 
-        LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
+        //add Crafting Key to Trial Chambers Unique Omnious Reward
+        LootTableEvents.MODIFY.register((key, tableBuilder, source, wrapper) -> {
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE.equals(key)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
