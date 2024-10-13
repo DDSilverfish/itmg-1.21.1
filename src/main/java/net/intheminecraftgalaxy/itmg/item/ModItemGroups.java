@@ -24,6 +24,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.SNOW_SWORD))
                     .displayName(Text.translatable("itemgroup.itmg.unique_items"))
                     .entries((displayContext, entries) -> {
+                        entries.add(ModItems.CRAFTING_KEY);
                         entries.add(ModItems.SNOW_SWORD);
                         entries.add(ModItems.TIMBER_AXE);
                     }).build());

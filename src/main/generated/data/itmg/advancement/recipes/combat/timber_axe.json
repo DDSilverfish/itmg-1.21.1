@@ -11,16 +11,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_snowball": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:snowball"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_stick": {
       "conditions": {
         "items": [
@@ -33,22 +23,32 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "itmg:snow_sword"
+        "recipe": "itmg:timber_axe"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_timber_axe_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": "itmg:timber_axe_head"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_snowball",
+      "has_timber_axe_head",
       "has_stick",
       "has_crafting_key"
     ]
   ],
   "rewards": {
     "recipes": [
-      "itmg:snow_sword"
+      "itmg:timber_axe"
     ]
   }
 }

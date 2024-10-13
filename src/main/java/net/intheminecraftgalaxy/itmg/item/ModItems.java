@@ -16,6 +16,8 @@ public class ModItems {
     public static final Item HEART_STATE_1 = registerItem("heart_state_1", new Item(new Item.Settings().maxCount(16)));
     public static final Item HEART = registerItem("heart", new HeartItem(new Item.Settings().maxCount(1)));
 
+    public static final Item CRAFTING_KEY = registerItem("crafting_key", new Item(new Item.Settings().maxCount(1)));
+
     public static final Item SNOW_SWORD = registerItem("snow_sword",
             new SnowSwordItem(ModToolMaterials.SNOW_TOOL, new Item.Settings()
                     .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SNOW_TOOL, 3, -2.4f))));

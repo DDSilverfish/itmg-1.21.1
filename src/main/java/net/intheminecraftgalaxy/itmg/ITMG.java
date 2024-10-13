@@ -21,7 +21,9 @@ public class ITMG implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 
+
 		ModDataComponentTypes.registerDataComponentTypes();
+
 
 		LifeSteal.register();
 	}

@@ -2,15 +2,18 @@ package net.intheminecraftgalaxy.itmg.item.custom;
 
 import com.llamalad7.mixinextras.lib.apache.commons.ObjectUtils;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.intheminecraftgalaxy.itmg.component.ModDataComponentTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -19,10 +22,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class TimberAxeItem extends AxeItem {
     public TimberAxeItem(ToolMaterial toolMaterial, Settings settings) {
@@ -102,5 +102,16 @@ public class TimberAxeItem extends AxeItem {
                 blockState.isOf(Blocks.JUNGLE_LOG) ||
                 blockState.isOf(Blocks.ACACIA_LOG) ||
                 blockState.isOf(Blocks.DARK_OAK_LOG);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        if (Screen.hasShiftDown()){
+            tooltip.add(Text.translatable("tooltip.tutorialmod.timber_axe.shift_down"));
+        }else {
+            tooltip.add(Text.translatable("tooltip.tutorialmod.timber_axe"));
+        }
+
+        super.appendTooltip(stack, context, tooltip, type);
     }
 }

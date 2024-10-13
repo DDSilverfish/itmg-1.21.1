@@ -42,10 +42,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.SNOW_SWORD)
                 .pattern(" S ")
                 .pattern(" S ")
-                .pattern(" T ")
+                .pattern("KT ")
                 .input('S', Items.SNOWBALL)
                 .input('T', Items.STICK)
-                .criterion(hasItem(Items.BEDROCK), conditionsFromItem(Items.BEDROCK))
+                .input('K', ModItems.CRAFTING_KEY)
+                .criterion(hasItem(Items.SNOWBALL), conditionsFromItem(Items.SNOWBALL))
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(ModItems.CRAFTING_KEY), conditionsFromItem(ModItems.CRAFTING_KEY))
                 .offerTo(exporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.TIMBER_AXE_HEAD)
@@ -56,7 +59,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.BEDROCK), conditionsFromItem(Items.BEDROCK))
                 .offerTo(exporter);
 
-
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.TIMBER_AXE)
+                .pattern(" S ")
+                .pattern(" T ")
+                .pattern("KT ")
+                .input('S', ModItems.TIMBER_AXE_HEAD)
+                .input('T', Items.STICK)
+                .input('K', ModItems.CRAFTING_KEY)
+                .criterion(hasItem(ModItems.TIMBER_AXE_HEAD), conditionsFromItem(ModItems.TIMBER_AXE_HEAD))
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(ModItems.CRAFTING_KEY), conditionsFromItem(ModItems.CRAFTING_KEY))
+                .offerTo(exporter);
 
     }
 }

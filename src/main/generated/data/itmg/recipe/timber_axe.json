@@ -6,7 +6,7 @@
       "item": "itmg:crafting_key"
     },
     "S": {
-      "item": "minecraft:snowball"
+      "item": "itmg:timber_axe_head"
     },
     "T": {
       "item": "minecraft:stick"
@@ -14,11 +14,11 @@
   },
   "pattern": [
     " S ",
-    " S ",
+    " T ",
     "KT "
   ],
   "result": {
     "count": 1,
-    "id": "itmg:snow_sword"
+    "id": "itmg:timber_axe"
   }
 }

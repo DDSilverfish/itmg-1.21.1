@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:iron_block"
+    },
+    "T": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "ST",
+    "T "
+  ],
+  "result": {
+    "count": 1,
+    "id": "itmg:timber_axe_head"
+  }
+}
