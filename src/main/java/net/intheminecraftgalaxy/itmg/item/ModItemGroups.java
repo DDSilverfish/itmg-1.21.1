@@ -2,6 +2,7 @@ package net.intheminecraftgalaxy.itmg.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.intheminecraftgalaxy.itmg.ITMG;
+import net.intheminecraftgalaxy.itmg.block.ModBlocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -17,6 +18,8 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.HEART_STATE_1);
                         entries.add(ModItems.HEART);
+                        entries.add(ModBlocks.HEART_BLOCK);
+
                     }).build());
 
     public static final ItemGroup UNIQUE_ITEMS = Registry.register(Registries.ITEM_GROUP,
@@ -28,6 +31,7 @@ public class ModItemGroups {
                         entries.add(ModItems.SNOW_SWORD);
                         entries.add(ModItems.TIMBER_AXE);
                         entries.add(ModItems.TIMBER_AXE_HEAD);
+                        entries.add(ModItems.MINING_STAFF);
                     }).build());
 
     public static void registerItemGroups() {

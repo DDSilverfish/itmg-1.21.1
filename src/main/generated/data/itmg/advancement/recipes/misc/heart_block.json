@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_heart_block": {
+    "has_heart_state_1": {
       "conditions": {
         "items": [
           {
-            "items": "itmg:heart_block"
+            "items": "itmg:heart_state_1"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:heart_state_1"
+        "recipe": "minecraft:heart_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_heart_block"
+      "has_heart_state_1"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:heart_state_1"
+      "minecraft:heart_block"
     ]
   }
 }

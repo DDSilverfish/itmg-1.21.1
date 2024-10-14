@@ -1,16 +1,21 @@
 {
   "item.itmg.heart_state_1": "Heart Part",
   "item.itmg.heart": "Heart",
+  "block.itmg.heart_block": "Heart Block",
 
   "item.itmg.snow_sword": "Snow Sword",
   "item.itmg.timber_axe": "Timber Axe",
   "item.itmg.timber_axe_head": "Timber Axe Head",
   "item.itmg.crafting_key": "Unique Item Key!!",
+  "item.itmg.mining_staff": "Mining Staff",
 
   "tooltip.tutorialmod.timber_axe.shift_down": "Trees be §5GONE!!§r",
   "tooltip.tutorialmod.timber_axe": "Press §eShift§r for more Information!",
 
-  "tooltip.tutorialmod.snow_sword.shift_down": "An entity that is hit will receive a §l§9slowness§r effect\nfor FIVE seconds.",
+  "tooltip.tutorialmod.snow_sword.shift_down_1": "An entity that is hit will receive a §l§9slowness§r",
+  "tooltip.tutorialmod.snow_sword.shift_down_2": "effect for FIVE seconds.",
+
+  "tooltip.tutorialmod.crafting_key": "Unlock unique Items",
 
   "tooltip.tutorialmod.snow_sword": "Press §eShift§r for more Information!",
 

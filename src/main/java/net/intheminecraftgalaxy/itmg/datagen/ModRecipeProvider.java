@@ -2,12 +2,16 @@ package net.intheminecraftgalaxy.itmg.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.intheminecraftgalaxy.itmg.ITMG;
+import net.intheminecraftgalaxy.itmg.block.ModBlocks;
 import net.intheminecraftgalaxy.itmg.item.ModItems;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.Identifier;
+
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
@@ -17,6 +21,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
+
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.HEART_STATE_1, RecipeCategory.MISC, ModBlocks.HEART_BLOCK);
+
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.HEART_STATE_1)
                 .pattern("A@A")
                 .pattern("@#@")
@@ -27,13 +35,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.NETHER_STAR), conditionsFromItem(Items.NETHER_STAR))
                 .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
                 .criterion(hasItem(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter);
+                .offerTo(exporter, Identifier.of(ITMG.MOD_ID, "heart_state_1_from_items"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.HEART)
                 .pattern(" @ ")
                 .pattern("@#@")
                 .pattern(" @ ")
-                .input('@', ModItems.HEART_STATE_1)
+                .input('@', ModBlocks.HEART_BLOCK)
                 .input('#', Items.TOTEM_OF_UNDYING)
                 .criterion(hasItem(ModItems.HEART_STATE_1), conditionsFromItem(ModItems.HEART_STATE_1))
                 .criterion(hasItem(Items.TOTEM_OF_UNDYING), conditionsFromItem(Items.TOTEM_OF_UNDYING))

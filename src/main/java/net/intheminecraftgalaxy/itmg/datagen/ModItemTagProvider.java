@@ -18,7 +18,5 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ItemTags.SWORDS)
                 .add(ModItems.SNOW_SWORD);
-        getOrCreateTagBuilder(ItemTags.AXES)
-                .add(ModItems.TIMBER_AXE);
     }
 }

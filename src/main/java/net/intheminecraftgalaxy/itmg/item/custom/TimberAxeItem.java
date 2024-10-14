@@ -17,6 +17,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -46,7 +48,7 @@ public class TimberAxeItem extends AxeItem {
             // Check if the block being broken is a log
             if (isLog(state)) {
                 // Send a message to the player
-                player.sendMessage(Text.literal("You mined a log!"), true);
+                //player.sendMessage(Text.literal("You mined a log!"), true);
 
                 // Start breaking neighboring logs
                 breakNeighboringLogs(world, player, pos);
@@ -127,4 +129,21 @@ public class TimberAxeItem extends AxeItem {
 
         super.appendTooltip(stack, context, tooltip, type);
     }
+
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
+    }
+
+    @Override
+    public boolean canBeEnchantedWith(ItemStack stack, RegistryEntry<Enchantment> enchantment, EnchantingContext context) {
+        return enchantment.getKey()
+                .map(resourceKey -> {
+                    //System.out.println("Attempting to enchant: " + resourceKey);
+                    //System.out.println("Attempting to enchant against: " + Enchantments.UNBREAKING);
+                    return resourceKey == Enchantments.UNBREAKING || resourceKey == Enchantments.EFFICIENCY;
+                })
+                .orElse(false);
+    }
+
 }
