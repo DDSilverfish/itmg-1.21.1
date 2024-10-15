@@ -12,7 +12,8 @@ import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
     SNOW_TOOL(ModTags.Blocks.INCORRECT_FOR_SNOW_TOOL, 10, 1.0F, 0.0f, 22, () -> Ingredient.ofItems(Items.SNOWBALL)),
-    TIMBER(ModTags.Blocks.INCORRECT_FOR_TIMBER_TOOL, 250, 6.0F, 2.0F, 14, () -> Ingredient.ofItems(ModItems.TIMBER_AXE_HEAD)); // New Timber material
+    TIMBER(ModTags.Blocks.INCORRECT_FOR_TIMBER_TOOL, 250, 6.0F, 2.0F, 14, () -> Ingredient.ofItems(ModItems.TIMBER_AXE_HEAD)),
+    VeinMiningPickaxe(ModTags.Blocks.INCORRECT_FOR_VEINMININGPICKAXE_TOOL, 200, 6.0F, 2.0F, 14, () -> Ingredient.ofItems(ModItems.TIMBER_AXE_HEAD));// New Timber material
 
     private final TagKey<Block> inverseTag;
     private final int itemDurability;

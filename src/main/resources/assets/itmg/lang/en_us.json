@@ -5,12 +5,16 @@
 
   "item.itmg.snow_sword": "Snow Sword",
   "item.itmg.timber_axe": "Timber Axe",
+  "item.itmg.vein_mining_pickaxe": "Vein Mining Pickaxe",
   "item.itmg.timber_axe_head": "Timber Axe Head",
   "item.itmg.crafting_key": "Unique Item Key!!",
   "item.itmg.mining_staff": "Mining Staff",
 
   "tooltip.tutorialmod.timber_axe.shift_down": "Trees be §5GONE!!§r",
   "tooltip.tutorialmod.timber_axe": "Press §eShift§r for more Information!",
+
+  "tooltip.tutorialmod.vein_mining_pickaxe.shift_down": "Maybe try it on ore veins??",
+  "tooltip.tutorialmod.vein_mining_pickaxe": "Press §eShift§r for more Information!",
 
   "tooltip.tutorialmod.snow_sword.shift_down_1": "An entity that is hit will receive a §l§9slowness§r",
   "tooltip.tutorialmod.snow_sword.shift_down_2": "effect for FIVE seconds.",

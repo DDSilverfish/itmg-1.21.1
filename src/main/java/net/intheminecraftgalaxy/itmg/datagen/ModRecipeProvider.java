@@ -5,6 +5,8 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.intheminecraftgalaxy.itmg.ITMG;
 import net.intheminecraftgalaxy.itmg.block.ModBlocks;
 import net.intheminecraftgalaxy.itmg.item.ModItems;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
@@ -47,6 +49,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.TOTEM_OF_UNDYING), conditionsFromItem(Items.TOTEM_OF_UNDYING))
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.VEIN_MINING_PICKAXE_ITEM)
+                .pattern(" # ")
+                .pattern("K@K")
+                .input('@', Items.NETHERITE_PICKAXE)
+                .input('#', Blocks.NETHERITE_BLOCK)
+                .input('K', ModItems.CRAFTING_KEY)
+                .criterion(hasItem(ModItems.CRAFTING_KEY), conditionsFromItem(ModItems.CRAFTING_KEY))
+                .criterion(hasItem(Blocks.NETHERITE_BLOCK), conditionsFromItem(Blocks.NETHERITE_BLOCK))
+                .criterion(hasItem(ModItems.CRAFTING_KEY), conditionsFromItem(ModItems.CRAFTING_KEY))
+                .offerTo(exporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.SNOW_SWORD)
                 .pattern(" S ")
                 .pattern(" S ")
@@ -59,23 +72,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.CRAFTING_KEY), conditionsFromItem(ModItems.CRAFTING_KEY))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.TIMBER_AXE_HEAD)
-                .pattern("ST")
-                .pattern("T ")
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.TIMBER_AXE_HEAD)
+                .pattern("SS")
+                .pattern("S ")
                 .input('S', Items.IRON_BLOCK)
-                .input('T', Items.IRON_INGOT)
-                .criterion(hasItem(Items.BEDROCK), conditionsFromItem(Items.BEDROCK))
+                .criterion(hasItem(Items.IRON_BLOCK), conditionsFromItem(Items.IRON_BLOCK))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.TIMBER_AXE)
-                .pattern(" S ")
-                .pattern(" T ")
-                .pattern("KT ")
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.TIMBER_AXE)
+                .pattern("KTS")
                 .input('S', ModItems.TIMBER_AXE_HEAD)
-                .input('T', Items.STICK)
+                .input('T', Items.IRON_AXE)
                 .input('K', ModItems.CRAFTING_KEY)
                 .criterion(hasItem(ModItems.TIMBER_AXE_HEAD), conditionsFromItem(ModItems.TIMBER_AXE_HEAD))
-                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(Items.IRON_AXE), conditionsFromItem(Items.IRON_AXE))
                 .criterion(hasItem(ModItems.CRAFTING_KEY), conditionsFromItem(ModItems.CRAFTING_KEY))
                 .offerTo(exporter);
 

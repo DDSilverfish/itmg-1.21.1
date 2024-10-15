@@ -1,52 +1,41 @@
 package net.intheminecraftgalaxy.itmg.item.custom;
 
-import com.llamalad7.mixinextras.lib.apache.commons.ObjectUtils;
-import com.mojang.datafixers.util.Either;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.item.v1.EnchantingContext;
-import net.intheminecraftgalaxy.itmg.component.ModDataComponentTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-public class TimberAxeItem extends AxeItem {
-    public TimberAxeItem(ToolMaterial toolMaterial, Settings settings) {
-        super(toolMaterial, settings);
+public class VeinMiningPickaxeItem extends PickaxeItem {
+    public VeinMiningPickaxeItem(ToolMaterial material, Settings settings) {
+        super(material, settings);
 
         PlayerBlockBreakEvents.BEFORE.register(this::onBlockBreak);
     }
 
-    // Event handler for block breaking
     private boolean onBlockBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, BlockEntity entity) {
         // Check if the item in the player's main hand is this TimberAxeItem
         ItemStack mainHandStack = player.getMainHandStack();
-        if (mainHandStack.getItem() instanceof TimberAxeItem) {
+        if (mainHandStack.getItem() instanceof VeinMiningPickaxeItem) {
             // Check if the block being broken is a log
-            if (isLog(state)) {
+            if (isOre(state)) {
                 // Send a message to the player
                 //player.sendMessage(Text.literal("You mined a log!"), true);
 
@@ -65,7 +54,7 @@ public class TimberAxeItem extends AxeItem {
         // Now break all the found logs
         for (BlockPos logPos : logsToBreak) {
             BlockState logState = world.getBlockState(logPos);
-            if (isLog(logState)) {
+            if (isOre(logState)) {
                 world.breakBlock(logPos, true, player); // Break the log
 
                 // Damage the axe after breaking each log
@@ -83,7 +72,7 @@ public class TimberAxeItem extends AxeItem {
 
     // Recursive method to find neighboring logs
     private void breakLogRecursively(World world, PlayerEntity player, BlockPos pos, Set<BlockPos> logsToBreak) {
-        if (!isLog(world.getBlockState(pos)) || logsToBreak.contains(pos)) {
+        if (!isOre(world.getBlockState(pos)) || logsToBreak.contains(pos)) {
             return; // Base case: Not a log or already processed
         }
 
@@ -102,40 +91,26 @@ public class TimberAxeItem extends AxeItem {
         };
     }
 
-    private boolean isLog(BlockState blockState) {
-        return blockState.isOf(Blocks.OAK_LOG) ||
-                blockState.isOf(Blocks.BIRCH_LOG) ||
-                blockState.isOf(Blocks.SPRUCE_LOG) ||
-                blockState.isOf(Blocks.JUNGLE_LOG) ||
-                blockState.isOf(Blocks.ACACIA_LOG) ||
-                blockState.isOf(Blocks.DARK_OAK_LOG) ||
-                blockState.isOf(Blocks.MANGROVE_LOG) ||
-                blockState.isOf(Blocks.CRIMSON_STEM) || // Nether
-                blockState.isOf(Blocks.WARPED_STEM) ||  // Nether
-                blockState.isOf(Blocks.CHERRY_LOG) ||   // Cherry wood from 1.20
-                blockState.isOf(Blocks.BAMBOO_BLOCK) || // Bamboo "log" from 1.20
-                blockState.isOf(Blocks.STRIPPED_OAK_LOG) ||
-                blockState.isOf(Blocks.STRIPPED_BIRCH_LOG) ||
-                blockState.isOf(Blocks.STRIPPED_SPRUCE_LOG) ||
-                blockState.isOf(Blocks.STRIPPED_JUNGLE_LOG) ||
-                blockState.isOf(Blocks.STRIPPED_ACACIA_LOG) ||
-                blockState.isOf(Blocks.STRIPPED_DARK_OAK_LOG) ||
-                blockState.isOf(Blocks.STRIPPED_MANGROVE_LOG) ||
-                blockState.isOf(Blocks.STRIPPED_CRIMSON_STEM) || // Nether
-                blockState.isOf(Blocks.STRIPPED_WARPED_STEM) ||  // Nether
-                blockState.isOf(Blocks.STRIPPED_CHERRY_LOG) ||
-                blockState.isOf(Blocks.STRIPPED_BAMBOO_BLOCK);
-    }
-
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if (Screen.hasShiftDown()){
-            tooltip.add(Text.translatable("tooltip.tutorialmod.timber_axe.shift_down"));
-        }else {
-            tooltip.add(Text.translatable("tooltip.tutorialmod.timber_axe"));
-        }
-
-        super.appendTooltip(stack, context, tooltip, type);
+    private boolean isOre(BlockState blockState) {
+        return blockState.isOf(Blocks.COAL_ORE) ||
+                blockState.isOf(Blocks.DEEPSLATE_COAL_ORE) ||
+                blockState.isOf(Blocks.IRON_ORE) ||
+                blockState.isOf(Blocks.DEEPSLATE_IRON_ORE) ||
+                blockState.isOf(Blocks.COPPER_ORE) ||
+                blockState.isOf(Blocks.DEEPSLATE_COPPER_ORE) ||
+                blockState.isOf(Blocks.GOLD_ORE) ||
+                blockState.isOf(Blocks.DEEPSLATE_GOLD_ORE) ||
+                blockState.isOf(Blocks.REDSTONE_ORE) ||
+                blockState.isOf(Blocks.DEEPSLATE_REDSTONE_ORE) ||
+                blockState.isOf(Blocks.EMERALD_ORE) ||
+                blockState.isOf(Blocks.DEEPSLATE_EMERALD_ORE) ||
+                blockState.isOf(Blocks.LAPIS_ORE) ||
+                blockState.isOf(Blocks.DEEPSLATE_LAPIS_ORE) ||
+                blockState.isOf(Blocks.DIAMOND_ORE) ||
+                blockState.isOf(Blocks.DEEPSLATE_DIAMOND_ORE) ||
+                blockState.isOf(Blocks.NETHER_QUARTZ_ORE) ||
+                blockState.isOf(Blocks.NETHER_GOLD_ORE) ||
+                blockState.isOf(Blocks.ANCIENT_DEBRIS);
     }
 
     @Override
@@ -149,9 +124,19 @@ public class TimberAxeItem extends AxeItem {
                 .map(resourceKey -> {
                     //System.out.println("Attempting to enchant: " + resourceKey);
                     //System.out.println("Attempting to enchant against: " + Enchantments.UNBREAKING);
-                    return resourceKey == Enchantments.UNBREAKING || resourceKey == Enchantments.EFFICIENCY;
+                    return resourceKey == Enchantments.UNBREAKING || resourceKey == Enchantments.EFFICIENCY || resourceKey == Enchantments.FORTUNE;
                 })
                 .orElse(false);
     }
 
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        if (Screen.hasShiftDown()){
+            tooltip.add(Text.translatable("tooltip.tutorialmod.vein_mining_pickaxe.shift_down"));
+        }else {
+            tooltip.add(Text.translatable("tooltip.tutorialmod.vein_mining_pickaxe"));
+        }
+
+        super.appendTooltip(stack, context, tooltip, type);
+    }
 }

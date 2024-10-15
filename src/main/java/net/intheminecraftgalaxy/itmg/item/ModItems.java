@@ -1,10 +1,7 @@
 package net.intheminecraftgalaxy.itmg.item;
 
 import net.intheminecraftgalaxy.itmg.ITMG;
-import net.intheminecraftgalaxy.itmg.item.custom.HeartItem;
-import net.intheminecraftgalaxy.itmg.item.custom.MiningStaffItem;
-import net.intheminecraftgalaxy.itmg.item.custom.SnowSwordItem;
-import net.intheminecraftgalaxy.itmg.item.custom.TimberAxeItem;
+import net.intheminecraftgalaxy.itmg.item.custom.*;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
@@ -37,10 +34,14 @@ public class ModItems {
     //        new SnowSwordItem(ModToolMaterials.SNOW_TOOL, new Item.Settings()
     //                ));
 
+    public static final Item VEIN_MINING_PICKAXE_ITEM = registerItem("vein_mining_pickaxe",
+            new VeinMiningPickaxeItem(ModToolMaterials.VeinMiningPickaxe, new Item.Settings()
+                    .attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.VeinMiningPickaxe, 1, -2.8f))
+                    .rarity(Rarity.EPIC)));
 
     public static final Item TIMBER_AXE = registerItem("timber_axe",
             new TimberAxeItem(ModToolMaterials.TIMBER, new Item.Settings()
-                    .attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.TIMBER, 1, -2.8f)).rarity(Rarity.EPIC)
+                    .attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.TIMBER, 6, -3.2f)).rarity(Rarity.EPIC)
             ));
     public static final Item TIMBER_AXE_HEAD = registerItem("timber_axe_head", new Item(new Item.Settings().maxCount(1)));
 

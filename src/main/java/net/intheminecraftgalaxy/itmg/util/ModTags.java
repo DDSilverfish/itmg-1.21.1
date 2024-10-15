@@ -12,6 +12,7 @@ public class ModTags {
 
         public static final TagKey<Block> INCORRECT_FOR_SNOW_TOOL = createTag("incorrect_for_snow_tool");
         public static final TagKey<Block> INCORRECT_FOR_TIMBER_TOOL = createTag("incorrect_for_snow_tool");
+        public static final TagKey<Block> INCORRECT_FOR_VEINMININGPICKAXE_TOOL = createTag("incorrect_for_snow_tool");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(ITMG.MOD_ID, name));

@@ -23,6 +23,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HEART, Models.GENERATED);
         itemModelGenerator.register(ModItems.SNOW_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.TIMBER_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VEIN_MINING_PICKAXE_ITEM, Models.HANDHELD);
         itemModelGenerator.register(ModItems.TIMBER_AXE_HEAD, Models.GENERATED);
         itemModelGenerator.register(ModItems.CRAFTING_KEY, Models.GENERATED);
         itemModelGenerator.register(ModItems.MINING_STAFF, Models.HANDHELD);

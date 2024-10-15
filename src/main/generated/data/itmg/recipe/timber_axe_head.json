@@ -4,14 +4,11 @@
   "key": {
     "S": {
       "item": "minecraft:iron_block"
-    },
-    "T": {
-      "item": "minecraft:iron_ingot"
     }
   },
   "pattern": [
-    "ST",
-    "T "
+    "SS",
+    "S "
   ],
   "result": {
     "count": 1,

@@ -9,13 +9,11 @@
       "item": "itmg:timber_axe_head"
     },
     "T": {
-      "item": "minecraft:stick"
+      "item": "minecraft:iron_axe"
     }
   },
   "pattern": [
-    " S ",
-    " T ",
-    "KT "
+    "KTS"
   ],
   "result": {
     "count": 1,
