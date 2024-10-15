@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "itmg:item/vein_mining_pickaxe"
+  }
+}

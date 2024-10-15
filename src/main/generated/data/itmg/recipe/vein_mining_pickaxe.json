@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:netherite_block"
+    },
+    "@": {
+      "item": "minecraft:netherite_pickaxe"
+    },
+    "K": {
+      "item": "itmg:crafting_key"
+    }
+  },
+  "pattern": [
+    " # ",
+    "K@K"
+  ],
+  "result": {
+    "count": 1,
+    "id": "itmg:vein_mining_pickaxe"
+  }
+}

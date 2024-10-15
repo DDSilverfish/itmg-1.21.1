@@ -3,9 +3,9 @@
 	"id": "itmg",
 	"version": "${version}",
 	"name": "ITMG",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "InTheMinecraftGalaxy",
 	"authors": [
-		"Me!"
+		"DD_SilverFish"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",

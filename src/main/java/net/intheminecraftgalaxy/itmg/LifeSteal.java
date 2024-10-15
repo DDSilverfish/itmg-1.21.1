@@ -20,12 +20,12 @@ public class LifeSteal {
     public static void register() {
         AttackEntityCallback.EVENT.register((PlayerEntity player, World world, Hand hand, Entity entity, EntityHitResult hitResult) -> {
             // Check if the attacked entity is a player
-            if (entity instanceof PlayerEntity) {
+            //if (entity instanceof PlayerEntity) {
                 // Send a message when a player attacks another player
-                if (!world.isClient) {  // Server-side check
-                    player.sendMessage(Text.literal("You attacked " + entity.getName().getString() + "!"), false);
-                }
-            }
+                //if (!world.isClient) {  // Server-side check
+                    //player.sendMessage(Text.literal("You attacked " + entity.getName().getString() + "!"), false);
+                //}
+            //}
             return ActionResult.PASS;
         });
 
@@ -37,7 +37,7 @@ public class LifeSteal {
                 // Server-side check to prevent client-side execution
                 if (!entity.getWorld().isClient) {
                     // Send a message to the player when they kill another player
-                    killer.sendMessage(Text.literal("You killed " + killedPlayer.getName().getString() + "!"), false);
+                    //killer.sendMessage(Text.literal("You killed " + killedPlayer.getName().getString() + "!"), false);
 
                     // Add a heart (increase max health) to the killer
                     EntityAttributeInstance killedHealthAttribute = killedPlayer.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);

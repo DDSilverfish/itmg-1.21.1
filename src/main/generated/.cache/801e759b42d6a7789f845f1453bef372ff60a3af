@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-15T18:54:11.8365474	ITMG/Model Definitions
+// 1.21.1	2024-10-16T00:35:41.1845756	ITMG/Model Definitions
 b663fc9febae4cbc58cee0db0cbeaef960ecade3 assets\itmg\blockstates\heart_block.json
 bd48eb66363306bb15f8571aba9aba6b7181c58c assets\itmg\models\item\mining_staff.json
 6bd234e1f2fc4fa7d69029297c30710f9ed5ee79 assets\itmg\models\item\timber_axe_head.json
@@ -8,5 +8,5 @@ f193b6b6d5cad0cc85c901a091d306951c734894 assets\itmg\models\item\crafting_key.js
 e9f0a433a578d0b410e9c2e45868ee967b24d095 assets\itmg\models\block\heart_block.json
 450301d2a1b4885f413eb3b0f1dcca8f23c14d11 assets\itmg\models\item\heart.json
 045b42820f84936738af1eca5f34467806101ae7 assets\itmg\models\item\heart_state_1.json
-aea759d64dbf7c8931845c10d1a0e02593b874b1 assets\itmg\models\item\timber_axe.json
 1df9f8c7b5e231ddd58339bac56fcb3549a90ec9 assets\itmg\models\item\vein_mining_pickaxe.json
+aea759d64dbf7c8931845c10d1a0e02593b874b1 assets\itmg\models\item\timber_axe.json

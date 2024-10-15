@@ -21,13 +21,13 @@ public class HeartItem extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         // Only increase health on the server side to avoid desync issues
         EntityAttributeInstance playerHealthAttribute = player.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
-        if (!world.isClient && playerHealthAttribute != null && playerHealthAttribute.getBaseValue() < 20) {
+        if (!world.isClient && playerHealthAttribute != null && playerHealthAttribute.getBaseValue() < InTheMinecraftGalaxyConfig.maxHeartItemGen) {
 
             // Get the player's current maximum health
             double currentMaxHealthPlayer = playerHealthAttribute.getBaseValue();
 
             // Set the new max health
-            playerHealthAttribute.setBaseValue(Math.min(currentMaxHealthPlayer + InTheMinecraftGalaxyConfig.heartDamage, InTheMinecraftGalaxyConfig.maxHeart));
+            playerHealthAttribute.setBaseValue(Math.min(currentMaxHealthPlayer + 2, InTheMinecraftGalaxyConfig.maxHeart));
 
             world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_PLAYER_LEVELUP, SoundCategory.PLAYERS, 1.0F, 1.0F);
 

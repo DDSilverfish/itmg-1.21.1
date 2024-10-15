@@ -12,5 +12,7 @@ public class ITMGDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModItemTagProvider::new);
+		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModLootTableProvider::new);
 	}
 }

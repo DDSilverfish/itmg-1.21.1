@@ -1,6 +1,7 @@
 package net.intheminecraftgalaxy.itmg.item.custom;
 
 import net.fabricmc.fabric.api.item.v1.EnchantingContext;
+import net.intheminecraftgalaxy.itmg.InTheMinecraftGalaxyConfig;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
@@ -32,7 +33,7 @@ public class SnowSwordItem extends SwordItem {
         }
 
         // Apply a freeze effect for 5 seconds (100 ticks = 5 seconds)
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 100, 2, false, true));
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, InTheMinecraftGalaxyConfig.snowSwordEffectDuration, 2, false, true));
 
         // Return true to indicate that the hit was successful
         return super.postHit(stack, target, attacker);

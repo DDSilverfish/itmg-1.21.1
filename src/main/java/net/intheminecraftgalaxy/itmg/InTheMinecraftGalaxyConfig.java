@@ -10,6 +10,12 @@ public class InTheMinecraftGalaxyConfig {
     public static double maxHeart = 30.0;
     public static double heartDamage = 2.0;
     public static double minHeart = 2.0;
+    public static double maxHeartItemGen = 20.0;
+
+    public static int timberAxeDurability = 250;
+    public static int snowSwordDurability = 10;
+    public static int snowSwordEffectDuration = 10;
+    public static int veinMiningPickaxeDurability = 200;
 
     // Load config from file
     public static void loadConfig() {
@@ -26,6 +32,14 @@ public class InTheMinecraftGalaxyConfig {
             maxHeart = Double.parseDouble(properties.getProperty("maxHeart", "30.0"));
             heartDamage = Double.parseDouble(properties.getProperty("heartDamage", "2.0"));
             minHeart = Double.parseDouble(properties.getProperty("minHeart", "2.0"));
+            maxHeartItemGen = Double.parseDouble(properties.getProperty("maxHeartItemGen", "20.0"));
+
+            timberAxeDurability = Integer.parseInt(properties.getProperty("timberAxeDurability", "250"));
+
+            snowSwordDurability = Integer.parseInt(properties.getProperty("snowSwordDurability", "10"));
+            snowSwordDurability = Integer.parseInt(properties.getProperty("snowSwordEffectDuration", "50"));
+
+            veinMiningPickaxeDurability = Integer.parseInt(properties.getProperty("veinMiningPickaxeDurability", "200"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -42,6 +56,14 @@ public class InTheMinecraftGalaxyConfig {
         properties.setProperty("maxHeart", Double.toString(maxHeart));
         properties.setProperty("heartDamage", Double.toString(heartDamage));
         properties.setProperty("minHeart", Double.toString(minHeart));
+        properties.setProperty("maxHeartItemGen", Double.toString(maxHeartItemGen));
+
+        properties.setProperty("timberAxeDurability", Integer.toString(timberAxeDurability));
+
+        properties.setProperty("snowSwordDurability", Integer.toString(snowSwordDurability));
+        properties.setProperty("snowSwordEffectDuration", Integer.toString(snowSwordDurability));
+
+        properties.setProperty("veinMiningPickaxeDurability", Integer.toString(veinMiningPickaxeDurability));
 
         // Save properties to the file
         try (OutputStream output = new FileOutputStream(configFile)) {
