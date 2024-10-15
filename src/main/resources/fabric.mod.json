@@ -9,9 +9,9 @@
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/DDSilverfish/itmg-1.21.1.git"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/itmg/icon.png",
 	"environment": "*",
 	"entrypoints": {
