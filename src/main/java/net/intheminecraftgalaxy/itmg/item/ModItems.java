@@ -43,9 +43,12 @@ public class ModItems {
             new TimberAxeItem(ModToolMaterials.TIMBER, new Item.Settings()
                     .attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.TIMBER, 6, -3.2f)).rarity(Rarity.EPIC)
             ));
+
     public static final Item TIMBER_AXE_HEAD = registerItem("timber_axe_head", new Item(new Item.Settings().maxCount(1)));
 
     public static final Item MINING_STAFF = registerItem("mining_staff", new MiningStaffItem(new Item.Settings().maxDamage(32).rarity(Rarity.EPIC)));
+
+    public static final Item THUNDERBLADE = registerItem("thunderblade", new ThunderBladeItem(new Item.Settings().maxCount(1).rarity(Rarity.EPIC)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(ITMG.MOD_ID, name), item);

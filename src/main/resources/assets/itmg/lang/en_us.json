@@ -9,6 +9,7 @@
   "item.itmg.timber_axe_head": "Timber Axe Head",
   "item.itmg.crafting_key": "Unique Item Key!!",
   "item.itmg.mining_staff": "Mining Staff",
+  "item.itmg.thunderblade": "Thunderblade",
 
   "tooltip.tutorialmod.timber_axe.shift_down": "Trees be §5GONE!!§r",
   "tooltip.tutorialmod.timber_axe": "Press §eShift§r for more Information!",
@@ -18,6 +19,9 @@
 
   "tooltip.tutorialmod.snow_sword.shift_down_1": "An entity that is hit will receive a §l§9slowness§r",
   "tooltip.tutorialmod.snow_sword.shift_down_2": "effect for FIVE seconds.",
+
+  "tooltip.tutorialmod.thunderblade.shift_down": "say §5WHAAAATTTTT!!§r",
+  "tooltip.tutorialmod.thunderblade": "Press §eShift§r for more Information!",
 
   "tooltip.tutorialmod.crafting_key": "Unlock unique Items",
 

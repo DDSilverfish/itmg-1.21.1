@@ -33,6 +33,7 @@ public class ModItemGroups {
                         entries.add(ModItems.TIMBER_AXE_HEAD);
                         entries.add(ModItems.MINING_STAFF);
                         entries.add(ModItems.VEIN_MINING_PICKAXE_ITEM);
+                        entries.add(ModItems.THUNDERBLADE);
                     }).build());
 
     public static void registerItemGroups() {

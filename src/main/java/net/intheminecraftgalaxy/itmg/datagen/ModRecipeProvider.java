@@ -72,6 +72,23 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.CRAFTING_KEY), conditionsFromItem(ModItems.CRAFTING_KEY))
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.THUNDERBLADE)
+                .pattern("ABC")
+                .pattern("DEF")
+                .input('A', Items.BREEZE_ROD)
+                .input('B', Items.DRAGON_BREATH)
+                .input('C', Items.ECHO_SHARD)
+                .input('D', ModItems.CRAFTING_KEY)
+                .input('E', Items.PHANTOM_MEMBRANE)
+                .input('F', Items.CONDUIT)
+                .criterion(hasItem(Items.BREEZE_ROD), conditionsFromItem(Items.BREEZE_ROD))
+                .criterion(hasItem(Items.DRAGON_BREATH), conditionsFromItem(Items.DRAGON_BREATH))
+                .criterion(hasItem(Items.ECHO_SHARD), conditionsFromItem(Items.ECHO_SHARD))
+                .criterion(hasItem(Items.PHANTOM_MEMBRANE), conditionsFromItem(Items.PHANTOM_MEMBRANE))
+                .criterion(hasItem(Items.CONDUIT), conditionsFromItem(Items.CONDUIT))
+                .criterion(hasItem(ModItems.CRAFTING_KEY), conditionsFromItem(ModItems.CRAFTING_KEY))
+                .offerTo(exporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.TIMBER_AXE_HEAD)
                 .pattern("SS")
                 .pattern("S ")
