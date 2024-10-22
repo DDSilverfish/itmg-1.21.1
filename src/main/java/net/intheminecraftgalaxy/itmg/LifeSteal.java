@@ -50,8 +50,8 @@ public class LifeSteal {
                     //killer.sendMessage(Text.literal("You killed " + killedPlayer.getName().getString() + "!"), false);
 
                     // Add a heart (increase max health) to the killer
-                    EntityAttributeInstance killedHealthAttribute = killedPlayer.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
-                    EntityAttributeInstance killerHealthAttribute = killer.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+                    EntityAttributeInstance killedHealthAttribute = killedPlayer.getAttributeInstance(EntityAttributes.MAX_HEALTH);
+                    EntityAttributeInstance killerHealthAttribute = killer.getAttributeInstance(EntityAttributes.MAX_HEALTH);
 
 
                     if (killerHealthAttribute != null && killedHealthAttribute != null && (killedHealthAttribute.getBaseValue() != InTheMinecraftGalaxyConfig.minHeart)) {
@@ -90,8 +90,8 @@ public class LifeSteal {
                                 return 1;
                             }
 
-                            EntityAttributeInstance giverHealthAttribute = giver.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
-                            EntityAttributeInstance receiverHealthAttribute= giver.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+                            EntityAttributeInstance giverHealthAttribute = giver.getAttributeInstance(EntityAttributes.MAX_HEALTH);
+                            EntityAttributeInstance receiverHealthAttribute= giver.getAttributeInstance(EntityAttributes.MAX_HEALTH);
 
                             assert giverHealthAttribute != null;
                             assert receiverHealthAttribute != null;

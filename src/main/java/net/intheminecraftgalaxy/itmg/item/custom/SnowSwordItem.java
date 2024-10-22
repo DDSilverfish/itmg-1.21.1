@@ -20,8 +20,9 @@ import java.util.List;
 
 public class SnowSwordItem extends SwordItem {
 
-    public SnowSwordItem(ToolMaterial toolMaterial, Settings settings) {
-        super(toolMaterial, settings);
+
+    public SnowSwordItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
     }
 
     @Override

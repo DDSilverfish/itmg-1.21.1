@@ -1,42 +1,28 @@
 package net.intheminecraftgalaxy.itmg.item.custom;
 
-import com.llamalad7.mixinextras.lib.apache.commons.ObjectUtils;
-import com.mojang.datafixers.util.Either;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.item.v1.EnchantingContext;
-import net.intheminecraftgalaxy.itmg.component.ModDataComponentTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.*;
 
 public class TimberAxeItem extends AxeItem {
-    public TimberAxeItem(ToolMaterial toolMaterial, Settings settings) {
-        super(toolMaterial, settings);
 
+    public TimberAxeItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
         PlayerBlockBreakEvents.BEFORE.register(this::onBlockBreak);
     }
 
@@ -136,11 +122,6 @@ public class TimberAxeItem extends AxeItem {
         }
 
         super.appendTooltip(stack, context, tooltip, type);
-    }
-
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return true;
     }
 
     @Override

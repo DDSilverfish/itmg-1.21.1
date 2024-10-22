@@ -11,8 +11,9 @@ import net.minecraft.registry.tag.TagKey;
 
 import java.util.function.Supplier;
 
-public enum ModToolMaterials implements ToolMaterial {
-    SNOW_TOOL(ModTags.Blocks.INCORRECT_FOR_SNOW_TOOL, InTheMinecraftGalaxyConfig.snowSwordDurability, 1.0F, 0.0f, 22, () -> Ingredient.ofItems(Items.SNOWBALL)),
+public enum ModToolMaterials implements ToolMaterial{
+    SNOW_TOOL(ModTags.Blocks.INCORRECT_FOR_SNOW_TOOL,
+            InTheMinecraftGalaxyConfig.snowSwordDurability, 1.0F, 0.0f, 22, () -> Ingredient.ofItems(Items.SNOWBALL)),
     TIMBER(ModTags.Blocks.INCORRECT_FOR_TIMBER_TOOL, InTheMinecraftGalaxyConfig.timberAxeDurability, 6.0F, 2.0F, 14, () -> Ingredient.ofItems(ModItems.TIMBER_AXE_HEAD)),
     VeinMiningPickaxe(ModTags.Blocks.INCORRECT_FOR_VEINMININGPICKAXE_TOOL, InTheMinecraftGalaxyConfig.veinMiningPickaxeDurability, 6.0F, 2.0F, 14, () -> Ingredient.ofItems(ModItems.TIMBER_AXE_HEAD));// New Timber material
 
@@ -33,34 +34,28 @@ public enum ModToolMaterials implements ToolMaterial {
         this.repairIngredient = Suppliers.memoize(repairIngredient::get);
     }
 
-    @Override
     public int getDurability() {
         return this.itemDurability;
     }
 
-    @Override
     public float getMiningSpeedMultiplier() {
         return this.miningSpeed;
     }
 
-    @Override
     public float getAttackDamage() {
         return this.attackDamage;
     }
 
-    @Override
     public TagKey<Block> getInverseTag() {
         return this.inverseTag;
     }
 
-    @Override
     public int getEnchantability() {
         return this.enchantability;
     }
 
-    @Override
     public Ingredient getRepairIngredient() {
-        return (Ingredient)this.repairIngredient.get();
+        return this.repairIngredient.get();
     }
 }
 

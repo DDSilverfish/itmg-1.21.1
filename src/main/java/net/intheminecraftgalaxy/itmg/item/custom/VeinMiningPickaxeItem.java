@@ -24,9 +24,10 @@ import java.util.List;
 import java.util.Set;
 
 public class VeinMiningPickaxeItem extends PickaxeItem {
-    public VeinMiningPickaxeItem(ToolMaterial material, Settings settings) {
-        super(material, settings);
 
+
+    public VeinMiningPickaxeItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
         PlayerBlockBreakEvents.BEFORE.register(this::onBlockBreak);
     }
 
@@ -111,11 +112,6 @@ public class VeinMiningPickaxeItem extends PickaxeItem {
                 blockState.isOf(Blocks.NETHER_QUARTZ_ORE) ||
                 blockState.isOf(Blocks.NETHER_GOLD_ORE) ||
                 blockState.isOf(Blocks.ANCIENT_DEBRIS);
-    }
-
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return true;
     }
 
     @Override

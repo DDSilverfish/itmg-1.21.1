@@ -27,22 +27,16 @@ public class ModItems {
     });
 
     public static final Item SNOW_SWORD = registerItem("snow_sword",
-            new SnowSwordItem(ModToolMaterials.SNOW_TOOL, new Item.Settings()
-                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SNOW_TOOL, 3, -2.4f)).rarity(Rarity.EPIC)));
-
-    //public static final Item SNOW_SWORD = registerItem("snow_sword",
-    //        new SnowSwordItem(ModToolMaterials.SNOW_TOOL, new Item.Settings()
-    //                ));
+            new SnowSwordItem(ModToolMaterials.SNOW_TOOL,3, -2.4f, new Item.Settings()
+                    .rarity(Rarity.EPIC)));
 
     public static final Item VEIN_MINING_PICKAXE_ITEM = registerItem("vein_mining_pickaxe",
-            new VeinMiningPickaxeItem(ModToolMaterials.VeinMiningPickaxe, new Item.Settings()
-                    .attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.VeinMiningPickaxe, 1, -2.8f))
+            new VeinMiningPickaxeItem(ModToolMaterials.VeinMiningPickaxe,1, -2.8f, new Item.Settings()
                     .rarity(Rarity.EPIC)));
 
     public static final Item TIMBER_AXE = registerItem("timber_axe",
-            new TimberAxeItem(ModToolMaterials.TIMBER, new Item.Settings()
-                    .attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.TIMBER, 6, -3.2f)).rarity(Rarity.EPIC)
-            ));
+            new TimberAxeItem(ModToolMaterials.TIMBER, 6, -3.2f, new Item.Settings()
+                    .rarity(Rarity.EPIC)));
 
     public static final Item TIMBER_AXE_HEAD = registerItem("timber_axe_head", new Item(new Item.Settings().maxCount(1)));
 

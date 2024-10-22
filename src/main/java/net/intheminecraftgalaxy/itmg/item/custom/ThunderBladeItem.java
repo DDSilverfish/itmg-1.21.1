@@ -28,17 +28,15 @@ public class ThunderBladeItem extends Item {
         PlayerEntity player = context.getPlayer();
         if (!world.isClient && player != null) {
 
-            if (!player.getItemCooldownManager().isCoolingDown(this)) {
+            if (!player.getItemCooldownManager().isCoolingDown(this.getDefaultStack())) {
                 // Summon lightning on right-click
                 BlockPos pos = context.getBlockPos().up();
-                LightningEntity lightning = EntityType.LIGHTNING_BOLT.create(world);
-                if (lightning != null) {
-                    lightning.refreshPositionAfterTeleport(pos.getX(), pos.getY(), pos.getZ());
-                    world.spawnEntity(lightning);
-                }
+                LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
+                lightning.refreshPositionAfterTeleport(pos.getX(), pos.getY(), pos.getZ());
+                world.spawnEntity(lightning);
 
                 //set cooldown 100 ticks
-                player.getItemCooldownManager().set(this, 100);
+                player.getItemCooldownManager().set(this.getDefaultStack(), 100);
             }
         }
 
@@ -50,17 +48,15 @@ public class ThunderBladeItem extends Item {
         World world = entity.getWorld();
         if (!world.isClient && user != null) {
 
-            if (!user.getItemCooldownManager().isCoolingDown(this)) {
+            if (!user.getItemCooldownManager().isCoolingDown(this.getDefaultStack())) {
                 // Summon lightning on right-click
                 BlockPos pos = entity.getBlockPos();
-                LightningEntity lightning = EntityType.LIGHTNING_BOLT.create(world);
-                if (lightning != null) {
-                    lightning.refreshPositionAfterTeleport(pos.getX(), pos.getY(), pos.getZ());
-                    world.spawnEntity(lightning);
-                }
+                LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
+                lightning.refreshPositionAfterTeleport(pos.getX(), pos.getY(), pos.getZ());
+                world.spawnEntity(lightning);
 
                 //set cooldown 100 ticks
-                user.getItemCooldownManager().set(this, 100);
+                user.getItemCooldownManager().set(this.getDefaultStack(), 100);
             }
         }
         return ActionResult.SUCCESS;

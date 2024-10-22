@@ -24,7 +24,7 @@ public class ModItemGroups {
 
     public static final ItemGroup UNIQUE_ITEMS = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(ITMG.MOD_ID, "unique_items"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.SNOW_SWORD))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.CRAFTING_KEY))
                     .displayName(Text.translatable("itemgroup.itmg.unique_items"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.CRAFTING_KEY);
