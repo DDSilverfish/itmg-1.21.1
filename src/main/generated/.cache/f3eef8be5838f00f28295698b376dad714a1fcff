@@ -1,19 +1,19 @@
-// 1.21.1	2024-10-17T02:43:10.2295043	ITMG/Recipes
-8058bc70316f23973b86ea9529550b9d4b889825 data\itmg\advancement\recipes\tools\timber_axe.json
-0fd6e185f6e051f540a3f98b0707ffd6a9cf7c78 data\itmg\recipe\timber_axe_head.json
-dc4801d7ff097c7ff4f9c6123cd4bd747c84be47 data\itmg\advancement\recipes\misc\heart_block.json
-97a8a933dcca06adc0bf67588eb10b388158e877 data\itmg\advancement\recipes\tools\timber_axe_head.json
-633bab773fca2c96470dceddeec83a90c88a0e2b data\itmg\recipe\timber_axe.json
+// 1.21.1	2024-10-21T00:22:11.4653659	ITMG/Recipes
 a6af0a3b8c32ba0cfe723e56e772824028faccb2 data\itmg\advancement\recipes\misc\heart.json
-de1cffefda889083aafb2e59fb9a46760cfedbb7 data\itmg\advancement\recipes\tools\vein_mining_pickaxe.json
-91b053c33eda8ed41689684f3263417a2f5dd00e data\itmg\recipe\heart_state_1_from_items.json
-46d8352a37b24eb1e7abf95666e0c50a4da028c7 data\itmg\advancement\recipes\misc\heart_state_1.json
-14d00554f6289f79150abbd37293dc7153bdcfb7 data\itmg\recipe\thunderblade.json
+bcf8ec54ed06def00742026787d56a5a52c74374 data\itmg\recipe\snow_sword.json
+0fd6e185f6e051f540a3f98b0707ffd6a9cf7c78 data\itmg\recipe\timber_axe_head.json
+633bab773fca2c96470dceddeec83a90c88a0e2b data\itmg\recipe\timber_axe.json
 60e57885bcea283a6f975f7fc8b48387b4546cb6 data\itmg\recipe\heart_state_1.json
+de1cffefda889083aafb2e59fb9a46760cfedbb7 data\itmg\advancement\recipes\tools\vein_mining_pickaxe.json
+97a8a933dcca06adc0bf67588eb10b388158e877 data\itmg\advancement\recipes\tools\timber_axe_head.json
+9586e3e0c687407637eaad4a57731e0f7ce43f8b data\itmg\advancement\recipes\combat\snow_sword.json
+46d8352a37b24eb1e7abf95666e0c50a4da028c7 data\itmg\advancement\recipes\misc\heart_state_1.json
+18eb73e2a4f6668eea0edd7700bb929c61f361b6 data\itmg\advancement\recipes\misc\heart_state_1_from_items.json
+ea1a7f599b32796ade8559e63e28ae3cbd01362d data\itmg\advancement\recipes\combat\thunderblade.json
+8058bc70316f23973b86ea9529550b9d4b889825 data\itmg\advancement\recipes\tools\timber_axe.json
+f6d20b1fdfcdfdcdb446cf6f1036db441125a448 data\itmg\recipe\heart.json
 060e2275dda8cbbc746db6c86079765528098e95 data\itmg\recipe\heart_block.json
 3ddb44e0fa0953dce1ae3f6bdb7c5e44c2a77f38 data\itmg\recipe\vein_mining_pickaxe.json
-9586e3e0c687407637eaad4a57731e0f7ce43f8b data\itmg\advancement\recipes\combat\snow_sword.json
-ea1a7f599b32796ade8559e63e28ae3cbd01362d data\itmg\advancement\recipes\combat\thunderblade.json
-18eb73e2a4f6668eea0edd7700bb929c61f361b6 data\itmg\advancement\recipes\misc\heart_state_1_from_items.json
-bcf8ec54ed06def00742026787d56a5a52c74374 data\itmg\recipe\snow_sword.json
-f6d20b1fdfcdfdcdb446cf6f1036db441125a448 data\itmg\recipe\heart.json
+14d00554f6289f79150abbd37293dc7153bdcfb7 data\itmg\recipe\thunderblade.json
+dc4801d7ff097c7ff4f9c6123cd4bd747c84be47 data\itmg\advancement\recipes\misc\heart_block.json
+91b053c33eda8ed41689684f3263417a2f5dd00e data\itmg\recipe\heart_state_1_from_items.json
