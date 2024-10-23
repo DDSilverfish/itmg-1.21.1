@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "itmg:heart_block"
-    }
+    "itmg:heart_block"
   ],
   "result": {
     "count": 9,

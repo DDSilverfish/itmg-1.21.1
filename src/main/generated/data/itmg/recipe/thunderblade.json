@@ -2,24 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "A": {
-      "item": "minecraft:breeze_rod"
-    },
-    "B": {
-      "item": "minecraft:dragon_breath"
-    },
-    "C": {
-      "item": "minecraft:echo_shard"
-    },
-    "D": {
-      "item": "itmg:crafting_key"
-    },
-    "E": {
-      "item": "minecraft:phantom_membrane"
-    },
-    "F": {
-      "item": "minecraft:conduit"
-    }
+    "A": "minecraft:breeze_rod",
+    "B": "minecraft:dragon_breath",
+    "C": "minecraft:echo_shard",
+    "D": "itmg:crafting_key",
+    "E": "minecraft:phantom_membrane",
+    "F": "minecraft:conduit"
   },
   "pattern": [
     "ABC",

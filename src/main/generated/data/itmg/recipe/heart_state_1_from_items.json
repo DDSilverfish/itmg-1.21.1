@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:nether_star"
-    },
-    "@": {
-      "item": "minecraft:netherite_upgrade_smithing_template"
-    },
-    "A": {
-      "item": "minecraft:redstone"
-    }
+    "#": "minecraft:nether_star",
+    "@": "minecraft:netherite_upgrade_smithing_template",
+    "A": "minecraft:redstone"
   },
   "pattern": [
     "A@A",

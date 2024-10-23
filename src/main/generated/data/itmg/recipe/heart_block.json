@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "itmg:heart_state_1"
-    }
+    "#": "itmg:heart_state_1"
   },
   "pattern": [
     "###",

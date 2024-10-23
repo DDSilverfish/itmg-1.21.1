@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:totem_of_undying"
-    },
-    "@": {
-      "item": "itmg:heart_block"
-    }
+    "#": "minecraft:totem_of_undying",
+    "@": "itmg:heart_block"
   },
   "pattern": [
     " @ ",

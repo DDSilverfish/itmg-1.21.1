@@ -6,13 +6,19 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
     public static final Block HEART_BLOCK = registerBlock("heart_block",
-            new Block(AbstractBlock.Settings.create().strength(2).requiresTool()));
+            new Block(createBlockSettings("heart_block").strength(2).requiresTool()));
 
+    private static AbstractBlock.Settings createBlockSettings(String blockName) {
+        Identifier id = Identifier.of(ITMG.MOD_ID, blockName);
+        RegistryKey<Block> key = RegistryKey.of(Registries.BLOCK.getKey(), id);
+        return AbstractBlock.Settings.create().registryKey(key);
+    }
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
@@ -20,8 +26,10 @@ public class ModBlocks {
     }
 
     private static void registerBlockItem(String name, Block block) {
-        Registry.register(Registries.ITEM, Identifier.of(ITMG.MOD_ID, name),
-                new BlockItem(block, new Item.Settings()));
+        Identifier id = Identifier.of(ITMG.MOD_ID, name);
+        RegistryKey<Item> key = RegistryKey.of(Registries.ITEM.getKey(), id);
+        Registry.register(Registries.ITEM, key,
+                new BlockItem(block, new Item.Settings().registryKey(key).useBlockPrefixedTranslationKey()));
     }
 
     public static void registerModBlocks(){

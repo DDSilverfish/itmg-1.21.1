@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "minecraft:netherite_block"
-    },
-    "@": {
-      "item": "minecraft:netherite_pickaxe"
-    },
-    "K": {
-      "item": "itmg:crafting_key"
-    }
+    "#": "minecraft:netherite_block",
+    "@": "minecraft:netherite_pickaxe",
+    "K": "itmg:crafting_key"
   },
   "pattern": [
     " # ",

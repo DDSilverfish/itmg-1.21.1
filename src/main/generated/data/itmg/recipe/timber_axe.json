@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "K": {
-      "item": "itmg:crafting_key"
-    },
-    "S": {
-      "item": "itmg:timber_axe_head"
-    },
-    "T": {
-      "item": "minecraft:iron_axe"
-    }
+    "K": "itmg:crafting_key",
+    "S": "itmg:timber_axe_head",
+    "T": "minecraft:iron_axe"
   },
   "pattern": [
     "KTS"

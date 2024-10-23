@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "K": {
-      "item": "itmg:crafting_key"
-    },
-    "S": {
-      "item": "minecraft:snowball"
-    },
-    "T": {
-      "item": "minecraft:stick"
-    }
+    "K": "itmg:crafting_key",
+    "S": "minecraft:snowball",
+    "T": "minecraft:stick"
   },
   "pattern": [
     " S ",
