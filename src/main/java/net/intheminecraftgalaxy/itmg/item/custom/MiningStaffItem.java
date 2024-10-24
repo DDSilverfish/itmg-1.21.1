@@ -5,6 +5,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -20,10 +21,11 @@ public class MiningStaffItem extends Item {
         World world = context.getWorld();
         BlockPos clickedBlock = context.getBlockPos();
 
-
-        if (!world.isClient() && Screen.hasShiftDown()) { // Only send the message on the server side
+        if (!world.isClient()) { // Only send the message on the server side
             PlayerEntity player = context.getPlayer();
-            assert player != null;
+            if (player == null) {
+                return ActionResult.FAIL; // Handle the case where the player is null
+            }
             Vec3d lookVector = player.getRotationVec(1.0F); // Get player's look direction
             Vec3d snappedVector = snapToAxis(lookVector);
 
@@ -41,10 +43,11 @@ public class MiningStaffItem extends Item {
                     continue;
                 }
 
-                world.breakBlock(blockBehind, true);
+                if (world instanceof ServerWorld serverWorld) {
+                    serverWorld.breakBlock(blockBehind, true);
+                }
             }
         }
-
 
         return ActionResult.SUCCESS;
     }

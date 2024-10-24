@@ -10,6 +10,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.RecipeGenerator;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -34,6 +35,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             public void generate() {
                 RegistryEntryLookup<Item> itemLookup = registries.getOrThrow(RegistryKeys.ITEM);
 
+
                 offerReversibleCompactingRecipes(RecipeCategory.MISC, ModItems.HEART_STATE_1, RecipeCategory.MISC, ModBlocks.HEART_BLOCK);
                 ShapedRecipeJsonBuilder.create(itemLookup, RecipeCategory.MISC, ModItems.HEART_STATE_1)
                         .pattern("A@A")
@@ -46,6 +48,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
                         .criterion(hasItem(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE))
                         .offerTo(exporter, String.valueOf(Identifier.of(ITMG.MOD_ID, "heart_state_1_from_items")));
+
+
 
                 ShapedRecipeJsonBuilder.create(itemLookup ,RecipeCategory.MISC, ModItems.HEART)
                         .pattern(" @ ")

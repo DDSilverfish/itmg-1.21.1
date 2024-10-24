@@ -91,7 +91,7 @@ public class LifeSteal {
                             }
 
                             EntityAttributeInstance giverHealthAttribute = giver.getAttributeInstance(EntityAttributes.MAX_HEALTH);
-                            EntityAttributeInstance receiverHealthAttribute= giver.getAttributeInstance(EntityAttributes.MAX_HEALTH);
+                            EntityAttributeInstance receiverHealthAttribute= receiver.getAttributeInstance(EntityAttributes.MAX_HEALTH);
 
                             assert giverHealthAttribute != null;
                             assert receiverHealthAttribute != null;
@@ -102,8 +102,8 @@ public class LifeSteal {
                                 giverHealthAttribute.setBaseValue(receiverCurrentMaxHealth - 2);
                                 receiverHealthAttribute.setBaseValue(receiverCurrentMaxHealth + 2);
 
-                                giver.sendMessage(Text.literal("You gave 1 heart to " + receiver.getName().getString() + "!"), false);
-                                receiver.sendMessage(Text.literal("You received 1 heart from " + giver.getName().getString() + "!"), false);
+                                giver.sendMessage(Text.literal("You gave 1 heart to " + receiver.getName().getString() + "!"), true);
+                                receiver.sendMessage(Text.literal("You received 1 heart from " + giver.getName().getString() + "!"), true);
 
                             } else if (receiver.getName() != giver.getName()) {
                                 giver.sendMessage(Text.literal("You can only send a heart to another player!"), false);

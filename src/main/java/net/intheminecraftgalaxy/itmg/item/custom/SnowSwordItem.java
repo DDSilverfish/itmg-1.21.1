@@ -1,5 +1,6 @@
 package net.intheminecraftgalaxy.itmg.item.custom;
 
+import com.jcraft.jorbis.Block;
 import net.fabricmc.fabric.api.item.v1.EnchantingContext;
 import net.intheminecraftgalaxy.itmg.InTheMinecraftGalaxyConfig;
 import net.minecraft.client.gui.screen.Screen;
@@ -9,14 +10,15 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.Text;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 public class SnowSwordItem extends SwordItem {
 
@@ -34,7 +36,7 @@ public class SnowSwordItem extends SwordItem {
         }
 
         // Apply a freeze effect for 5 seconds (100 ticks = 5 seconds)
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, InTheMinecraftGalaxyConfig.snowSwordEffectDuration, 2, false, true));
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, InTheMinecraftGalaxyConfig.snowSwordEffectDuration*20, 2, false, true));
 
         // Return true to indicate that the hit was successful
         return super.postHit(stack, target, attacker);
@@ -62,4 +64,6 @@ public class SnowSwordItem extends SwordItem {
                 })
                 .orElse(false);
     }
+
+
 }

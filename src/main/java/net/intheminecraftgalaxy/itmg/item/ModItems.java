@@ -4,9 +4,11 @@ import net.intheminecraftgalaxy.itmg.ITMG;
 import net.intheminecraftgalaxy.itmg.item.custom.*;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
@@ -31,16 +33,28 @@ public class ModItems {
     });
 
     public static final Item SNOW_SWORD = registerItem("snow_sword",
-            new SnowSwordItem(ToolMaterial.IRON,3, -2.4f, createSettings("snow_sword")
-                    .rarity(Rarity.EPIC)));
+            new SnowSwordItem(
+                    ModToolMaterials.SNOW_TOOL.getMaterial(),
+                    3.0f,
+                    -2.4f,
+                    createSettings("snow_sword")
+                            .rarity(Rarity.EPIC)
+            ));
 
     public static final Item VEIN_MINING_PICKAXE_ITEM = registerItem("vein_mining_pickaxe",
-            new VeinMiningPickaxeItem(ToolMaterial.IRON,1, -2.8f, createSettings("vein_mining_pickaxe")
-                    .rarity(Rarity.EPIC)));
+            new VeinMiningPickaxeItem(
+                    ModToolMaterials.VEINMININGPICKAXETOOL.getMaterial(),
+                    1,
+                    -2.8f,
+                    createSettings("vein_mining_pickaxe")
+                            .rarity(Rarity.EPIC)));
 
     public static final Item TIMBER_AXE = registerItem("timber_axe",
-            new TimberAxeItem(ToolMaterial.IRON, 6, -3.2f, createSettings("timber_axe")
-                    .rarity(Rarity.EPIC)));
+            new TimberAxeItem(ModToolMaterials.TIMBER_TOOL.getMaterial(),
+                    6,
+                    -3.2f,
+                    createSettings("timber_axe")
+                            .rarity(Rarity.EPIC)));
 
 
     public static final Item TIMBER_AXE_HEAD = registerItem("timber_axe_head", new Item(createSettings("timber_axe_head").maxCount(1)));
